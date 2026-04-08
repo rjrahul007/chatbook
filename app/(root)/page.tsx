@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import HeroSection from "@/components/HeroSection";
 import BookCard from "@/components/BookCard";
 import { getAllBooks } from "@/lib/actions/book.action";
@@ -13,7 +14,13 @@ const page = async () => {
         <h2 className="text-3xl font-serif font-bold text-[#212a3b]">
           Recent Books
         </h2>
-        <Search />
+        <Suspense
+          fallback={
+            <div className="w-48 h-10 bg-gray-200 rounded animate-pulse" />
+          }
+        >
+          <Search />
+        </Suspense>
       </div>
       <div className="library-books-grid">
         {books.map(({ _id, title, slug, author, coverURL }) => {
