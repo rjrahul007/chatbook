@@ -7,6 +7,7 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
+  SignUpButton,
   UserButton,
   useUser,
 } from "@clerk/nextjs";
@@ -51,7 +52,7 @@ const Navbar = () => {
 
           <div className="flex gap-7.5 items-center">
             <SignedOut>
-              <SignInButton mode="modal" />
+              <SignUpButton mode="modal" />
             </SignedOut>
             <SignedIn>
               <div className="nav-user-link">

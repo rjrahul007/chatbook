@@ -35,9 +35,7 @@ let vapi: InstanceType<typeof Vapi>;
 function getVapi() {
   if (!vapi) {
     if (!VAPI_API_KEY) {
-      throw new Error(
-        "NEXT_PUBLIC_VAPI_API_KEY environment variable is not set",
-      );
+      throw new Error("VAPI_API_KEY environment variable is not set");
     }
     vapi = new Vapi(VAPI_API_KEY);
   }
